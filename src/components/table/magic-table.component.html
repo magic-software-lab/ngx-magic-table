@@ -1,0 +1,69 @@
+<div *ngIf="rows && rows.length > 0">
+
+    <div class="table-responsive">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center" *ngFor="let column of columns" [sortedColumn]="column" (sortChanged)="onChangeTable()"
+                        ngClass="{{column.className || ''}}">
+                        {{column.title}}
+                        <i *ngIf="column.sort" class=" fa" [ngClass]="{'fa-chevron-down': column.sort === 'desc', 'fa-chevron-up': column.sort === 'asc'}"></i>
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+         
+                <tr *ngFor="let row of rows">
+                    <ng-container *ngFor="let column of columns; let last = last">
+                        <td *ngIf="!column.actions" [bindData]="{ row: row, column: column}"></td>
+
+                        <td *ngIf="column.actions" class="text-center">
+                            <ng-container *ngIf="column.actions.type === 'simple'">
+                                <a *ngFor="let actionButton of column.actions.buttons" [className]="actionButton.styleClass" (click)="actionClick(actionButton.action, row)">
+                                    <i class="" ngClass="{{actionButton.styleIcon || ''}}"></i> {{ actionButton.title }}
+                                </a>
+                            </ng-container>
+
+                            <ng-container *ngIf="column.actions.type === 'group'">
+                                <div class="btn-group" role="group">
+                                    <a *ngFor="let actionButton of column.actions.buttons" [className]="actionButton.styleClass" (click)="actionClick(actionButton.action, row)">
+                                        <i class="" ngClass="{{actionButton.styleIcon || ''}}"></i> {{ actionButton.title
+                                        }}
+                                    </a>
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="column.actions.type === 'dropdown'">
+                                <div bsDropdown [placement]="last ? 'bottom right' : ''" class="dropdown">
+                                    <button id="single-button" type="button" [className]="column.actions.dropdownInfo ? column.actions.dropdownInfo.styleClass : ''"
+                                        bsDropdownToggle>
+                                <i class="" ngClass="{{column.actions.dropdownInfo.styleIcon || ''}}"></i> {{ column.actions.dropdownInfo ? column.actions.dropdownInfo.title : '' }} <span class="caret"></span>
+                            </button>
+                                    <ul *dropdownMenu class="dropdown-menu" [ngClass]="last ? 'dropdown-menu-right' : ''" role="menu" aria-labelledby="single-button">
+                                        <li role="menuitem" *ngFor="let actionButton of column.actions.buttons">
+                                            <a class="dropdown-item" (click)="actionClick(actionButton.action, row)">
+                                                <i class="" ngClass="{{actionButton.styleIcon || ''}}"></i> {{ actionButton.title
+                                                }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </ng-container>
+                        </td>
+
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="pagination" class="text-center">
+        <pagination class="pagination-sm" [(ngModel)]="pagination.page" [totalItems]="pagination.length" [itemsPerPage]="pagination.itemsPerPage"
+            [maxSize]="pagination.maxSize" [boundaryLinks]="true" [rotate]="false" (pageChanged)="onChangeTable($event)" (numPages)="pagination.numPages = $event">
+        </pagination>
+    </div>
+</div>
+
+<terp-ng-magic-table-content-placeholder *ngIf="!rows || rows.length === 0"></terp-ng-magic-table-content-placeholder>

@@ -1,0 +1,146 @@
+	@-webkit-keyframes placeHolderShimmer {
+	  0% {
+	    background-position: -468px 0
+	  }
+	  100% {
+	    background-position: 700px 0
+	  }
+	}
+	
+	@keyframes placeHolderShimmer {
+	  0% {
+	    background-position: -468px 0
+	  }
+	  100% {
+	    background-position: 700px 0
+	  }
+	}
+	
+	.datatable-placeholder {
+	  background: #fff;
+	  border-radius: 3px;
+	  padding: 3px;
+	  margin: 0 auto;
+	  min-height: 300px;
+	}
+	
+	.animated-background {
+	  -webkit-animation-duration: 1s;
+	  animation-duration: 1s;
+	  -webkit-animation-fill-mode: forwards;
+	  animation-fill-mode: forwards;
+	  -webkit-animation-iteration-count: infinite;
+	  animation-iteration-count: infinite;
+	  -webkit-animation-name: placeHolderShimmer;
+	  animation-name: placeHolderShimmer;
+	  -webkit-animation-timing-function: linear;
+	  animation-timing-function: linear;
+	  background: #f6f7f8;
+	  background: #eeeeee;
+	  background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee));
+	  background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+	  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+	  -webkit-background-size: 100% 250px;
+	  background-size: 100% 250px;
+	  height: 250px;
+	  position: relative;
+	}
+
+    @media screen and (min-width: 0px) {
+       .animated-background {
+            -webkit-animation-duration: 4s;
+	        animation-duration: 4s;
+       }
+    }
+
+     @media screen and (min-width: 300px) {
+       .animated-background {
+            -webkit-animation-duration: 3s;
+	        animation-duration: 3s;
+       }
+    }
+
+    @media screen and (min-width: 768px) {
+       .animated-background {
+            -webkit-animation-duration: 2s;
+	        animation-duration: 2s;
+       }
+    }
+
+    @media screen and (min-width: 1368px) {
+       .animated-background {
+            -webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+       }
+    }
+	
+	.background-masker {
+	  background: #fff;
+	  position: absolute;
+	  -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+	}
+	
+	.outlined .background-masker {
+	  border: 1px solid #ddd;
+	}
+	
+	.outlined:hover .background-masker {
+	  border: none;
+	}
+	
+	.outlined:hover .background-masker:hover {
+	  border: 1px solid #ccc;
+	  z-index: 1;
+	}
+
+    .background-masker.header-column-first {
+        top: 40px;
+        left: 0;
+        height: 10px;
+        width: 100%;
+    }
+
+    .background-masker.header-row-first {
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+    }
+
+    .background-masker.header-column-separate-first {
+        top: 50px;
+        left: 49%;
+        width: 1.5%;
+        height: 40px;
+    }
+
+    .background-masker.header-row-second {
+        top: 140px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+    }
+
+    .background-masker.header-column-separate-second {
+        top: 100px;
+        left: 49%;
+        width: 1.5%;
+        height: 40px;
+    }
+
+    .background-masker.header-row-third {
+        top: 190px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+    }
+
+    .background-masker.header-column-separate-third {
+        top: 150px;
+        left: 49%;
+        width: 1.5%;
+        height: 40px;
+    }
+    
