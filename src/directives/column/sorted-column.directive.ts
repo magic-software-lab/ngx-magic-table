@@ -8,12 +8,12 @@ import { MagicTableColumn } from '../../models/magic-table-options';
 })
 export class NgxMagicTableSortedColumnDirective implements OnChanges {
   @Input()
-  public terpNgMagicTableSortedColumn: MagicTableColumn;
+  public sortedColumn: MagicTableColumn;
 
   @Output() public sortChanged: EventEmitter<any> = new EventEmitter();
 
   private get column() {
-    return this.terpNgMagicTableSortedColumn;
+    return this.sortedColumn;
   }
 
   constructor(private el: ElementRef,

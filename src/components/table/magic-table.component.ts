@@ -9,6 +9,7 @@ import { NgxMagicTableObjectUtilsService } from '../../services/object-utils';
   styleUrls: []
 })
 export class NgxMagicTableComponent implements OnInit, OnChanges {
+
   @Output() public tableChanged: EventEmitter<any> = new EventEmitter();
 
   @Input()
@@ -26,9 +27,10 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
 
   @Input()
   public set columns(columns: MagicTableColumns) {
-    this._columns = columns;
-
-    this.sorting = this._columns.find((column: any) => column.sort) ? true : false;
+    if (columns) {
+      this._columns = columns;
+      this.sorting = this._columns.find((column: any) => column.sort) ? true : false;
+    }
   }
 
   public get columns(): MagicTableColumns {
@@ -37,16 +39,18 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
 
   @Input()
   public set tableOptions(tableOptions: MagicTableOptions) {
-    this._tableOptions = tableOptions;
+    if (tableOptions) {
+      this._tableOptions = tableOptions;
 
-    if (this._tableOptions.pagination) {
-      this.pagination = {
-        page: this._tableOptions.pagination.page,
-        numPages: this._tableOptions.pagination.numPages,
-        itemsPerPage: this._tableOptions.pagination.itemsPerPage,
-        maxSize: this._tableOptions.pagination.maxSize,
-        length: this._tableOptions.pagination.length
-      };
+      if (this._tableOptions.pagination) {
+        this.pagination = {
+          page: this._tableOptions.pagination.page,
+          numPages: this._tableOptions.pagination.numPages,
+          itemsPerPage: this._tableOptions.pagination.itemsPerPage,
+          maxSize: this._tableOptions.pagination.maxSize,
+          length: this._tableOptions.pagination.length
+        };
+      }
     }
   }
 
@@ -59,20 +63,29 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
   private _data: Array<any> = [];
   private _tableOptions: MagicTableOptions;
   private _columns: MagicTableColumns;
-  private pagination: MagicTableOptionsPagination;
   private sorting: any;
   private configTableChanged: any;
+
+  private pagination: MagicTableOptionsPagination = {
+    page: 1,
+    numPages: 1,
+    itemsPerPage: 5,
+    maxSize: 5,
+    length: 1
+  };
 
   constructor(private objectUtilsService: NgxMagicTableObjectUtilsService) { }
 
   public get sortedColumns(): Array<any> {
     const sortColumns: Array<any> = [];
 
-    this.columns.forEach((column: any) => {
-      if (column.sort) {
-        sortColumns.push(column);
-      }
-    });
+    if (this.columns) {
+      this.columns.forEach((column: any) => {
+        if (column.sort) {
+          sortColumns.push(column);
+        }
+      });
+    }
 
     return sortColumns;
   }
@@ -132,7 +145,7 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
   }
 
   private changePage(page: any, data: Array<any> = this.data): Array<any> {
-    if (!this.pagination) {
+    if (!this.pagination || !data) {
       return data;
     }
 

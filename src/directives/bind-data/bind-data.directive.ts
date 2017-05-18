@@ -9,10 +9,10 @@ import { MagicTableColumn } from '../../models/magic-table-options';
 })
 export class NgxMagicTableBindDataDirective implements OnChanges {
 
-  @Input() terpNgMagicTableBindData: any;
+  @Input() bindData: any;
 
   private get config() {
-    return this.terpNgMagicTableBindData;
+    return this.bindData;
   }
 
   constructor(

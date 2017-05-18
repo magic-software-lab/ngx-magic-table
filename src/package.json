@@ -1,6 +1,6 @@
 {
   "name": "@magic-software/ngx-magic-table",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/magic-software-lab/ngx-magic-table.git"
@@ -16,8 +16,8 @@
   "bugs": {
     "url": "https://github.com/magic-software-lab/ngx-magic-table.git/issues"
   },
-  "module": "ngx-magic-table.js",
-  "typings": "ngx-magic-table.d.ts",
+  "module": "index.js",
+  "typings": "index.ts",
   "peerDependencies": {
     "@angular/core": "^4.0.0",
     "rxjs": "^5.1.0",

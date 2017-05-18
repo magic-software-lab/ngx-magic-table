@@ -11,8 +11,6 @@ import { NgxMagicTableContentPlaceholderComponent } from './components/content-p
 
 import { NgxMagicTableObjectUtilsService } from './services/object-utils';
 
-export * from './components/table/magic-table.component';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -26,7 +24,12 @@ export * from './components/table/magic-table.component';
     NgxMagicTableSortedColumnDirective,
     NgxMagicTableContentPlaceholderComponent
   ],
-  exports: [NgxMagicTableComponent],
+  exports: [
+    NgxMagicTableComponent,
+    NgxMagicTableBindDataDirective,
+    NgxMagicTableSortedColumnDirective,
+    NgxMagicTableContentPlaceholderComponent
+  ],
   providers: [
     DatePipe,
     CurrencyPipe,
@@ -38,7 +41,9 @@ export class NgxMagicTableModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: NgxMagicTableModule,
-      providers: []
+      providers: [
+
+      ]
     };
   }
 }
