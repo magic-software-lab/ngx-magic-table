@@ -1,9 +1,9 @@
 {
-  "name": "ngx-magic-table",
-  "version": "0.1.0",
+  "name": "@magic-software/ngx-magic-table",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eronalves/ngx-magic-table.git"
+    "url": "https://github.com/magic-software-lab/ngx-magic-table.git"
   },
   "author": {
     "name": "Eron Rodrigues Alves",
@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eronalves/ngx-magic-table.git/issues"
+    "url": "https://github.com/magic-software-lab/ngx-magic-table.git/issues"
   },
   "module": "ngx-magic-table.js",
   "typings": "ngx-magic-table.d.ts",
