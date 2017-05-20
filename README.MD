@@ -1,11 +1,17 @@
-# ngx-magic-table
+# Magic Software - ngx-magic-table
+
+Easy to use table for Angular(4.x.x), it's magic!!
+
+* Warning
+
+This library is in alpha testing, there are some issues to fix and new features will be implemented.
 
 ## Installation
 
 To install this library, run:
 
 ```bash
-$ npm install ngx-magic-table --save
+$ npm install @magic-software/ngx-magic-table --save
 ```
 
 ## Using
@@ -55,17 +61,17 @@ Once is imported, you can use its components in your Angular application:
 
 ## Development
 
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+Implementing the [Angular Package Format v4.0](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit#heading=h.k0mh3o8u5hx).
 
-```bash
-$ npm run build
-```
+Common tasks are present as npm scripts:
 
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
-```
+- `npm start` to run a live-reload server with the demo app
+- `npm run test` to test in watch mode, or `npm run test:once` to only run once
+- `npm run build` to build the library
+- `npm run lint` to lint 
+- `npm run clean` to clean
+- `npm run integration` to run the integration e2e tests
+- `npm install ./relative/path/to/lib` after `npm run build` to test locally in another app
 
 ## License
 

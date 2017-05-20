@@ -1,15 +1,19 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "experimentalDecorators": true,
+    "target": "es5",
+    "module": "es2015",
     "moduleResolution": "node",
-    "rootDir": "./src",
-    "target": "es6",
-    "lib": [
-      "es2016",
-      "dom"
-    ],
+    "sourceMap": true,
+    "inlineSources": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
-    "types": ["jasmine"]
+    "stripInternal": true,
+    "lib": [
+      "es2015",
+      "dom"
+    ]
   }
 }
