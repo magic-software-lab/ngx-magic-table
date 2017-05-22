@@ -84,8 +84,12 @@ module.exports = function (config) {
     },
     reporters: ['progress', 'kjhtml', 'karma-remap-istanbul', 'coverage'],
     coverageReporter: {
-      type : 'lcov',
-      dir : 'coverage/'
+       reporters: [
+                // generates ./coverage/lcov.info
+                {type:'lcovonly', subdir: '.'},
+                // generates ./coverage/coverage-final.json
+                {type:'json', subdir: '.'},
+            ]
     },
 
     remapIstanbulReporter: {
