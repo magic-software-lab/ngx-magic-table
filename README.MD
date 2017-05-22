@@ -7,7 +7,6 @@ Easy to use table for Angular(4.x.x), it's magic!!
 This library is in alpha testing, there are some issues to fix and new features will be implemented.
 
 [![Build Status](https://travis-ci.org/magic-software-lab/ngx-magic-table.svg?branch=master)](https://travis-ci.org/magic-software-lab/ngx-magic-table)
-
 [![codecov](https://codecov.io/gh/magic-software-lab/ngx-magic-table/branch/master/graph/badge.svg)](https://codecov.io/gh/magic-software-lab/ngx-magic-table)
 
 ## Installation
