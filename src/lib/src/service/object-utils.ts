@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class NgxMagicTableObjectUtilsService {
 
-    public isEquals(obj1: any, obj2: any) {
+    public isEquals(obj1: any, obj2: any): Boolean {
         for (const p in obj1) {
             if (obj1.hasOwnProperty(p) === obj2.hasOwnProperty(p)) {
                 switch (typeof (obj1[p])) {

@@ -43,7 +43,8 @@ System.config({
   // Extend usual application package list with test folder
   packages: {
     rxjs: { defaultExtension: 'js' },
-    '': { defaultExtension: 'js' }
+    'ngx-bootstrap': { defaultExtension: 'js' },
+    '': { defaultExtension: 'js' },
   },
   // Map the angular umd bundles
   map: {
@@ -64,7 +65,10 @@ System.config({
     '@angular/http/testing': 'npm:@angular/http/bundles/http-testing.umd.js',
     '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
     '@angular/forms/testing': 'npm:@angular/forms/bundles/forms-testing.umd.js',
+
+    // Dependencies
     'rxjs': 'npm:rxjs',
+    'ngx-bootstrap': 'npm:ngx-bootstrap/bundles/ngx-bootstrap.umd.min.js'
   }
 });
 

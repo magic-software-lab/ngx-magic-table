@@ -10,14 +10,13 @@ describe('NgMagicTableContentPlaceholderComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ NgxMagicTableContentPlaceholderComponent ]
     })
-    .compileComponents();
+    .compileComponents()
+    .then(() => {
+      fixture = TestBed.createComponent(NgxMagicTableContentPlaceholderComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    });
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(NgxMagicTableContentPlaceholderComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
