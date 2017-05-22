@@ -3,6 +3,8 @@
 
 Easy to use table for Angular(4.x.x), it's magic!!
 
+[![Its Magic](http://www.reactiongifs.com/r/mgc.gif)]
+
 ####<span style="color:red">Warning</span>
 This library is in alpha testing, there are some issues to fix and new features will be implemented.
 
@@ -201,7 +203,7 @@ export class AppComponent {
 
 ## Utilisation - API
 
-Do you want to know more? Check the docs for API [here](https://github.com/valor-software/ngx-bootstrap/blob/development/docs/getting-started/bootstrap4.md).
+Do you want to know more? Check the docs for API [here]().
 
 ## Development
 
