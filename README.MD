@@ -116,7 +116,7 @@ export class AppComponent {
   }
 
   private prepareMagic() {
-  		this.columns = [
+  	  this.columns = [
 	      {
 	        field: 'id',
 	        title: 'ID'
