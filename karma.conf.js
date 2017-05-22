@@ -10,7 +10,8 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
-      require('karma-coverage')
+      require('karma-coverage'),
+      require('karma-remap-istanbul')
     ],
 
     client: {
@@ -79,12 +80,18 @@ module.exports = function (config) {
 
     exclude: [],
     preprocessors: {
-      'src/**/*.js': ['coverage']
+      'build/**/!(*spec).js': ['coverage']
     },
-    reporters: ['progress', 'kjhtml', 'coverage'],
+    reporters: ['progress', 'kjhtml', 'karma-remap-istanbul', 'coverage'],
     coverageReporter: {
       type : 'lcov',
       dir : 'coverage/'
+    },
+
+    remapIstanbulReporter: {
+      reports: {
+        html: 'coverage'
+      }
     },
 
     port: 9876,
