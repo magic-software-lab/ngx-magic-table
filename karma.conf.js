@@ -9,7 +9,8 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter')
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage')
     ],
 
     client: {
@@ -77,8 +78,14 @@ module.exports = function (config) {
     },
 
     exclude: [],
-    preprocessors: {},
-    reporters: ['progress', 'kjhtml'],
+    preprocessors: {
+      'src/**/*.js': ['coverage']
+    },
+    reporters: ['progress', 'kjhtml', 'coverage'],
+    coverageReporter: {
+      type : 'lcov',
+      dir : 'coverage/'
+    },
 
     port: 9876,
     colors: true,

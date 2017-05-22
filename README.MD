@@ -8,6 +8,8 @@ This library is in alpha testing, there are some issues to fix and new features 
 
 [![Build Status](https://travis-ci.org/magic-software-lab/ngx-magic-table.svg?branch=master)](https://travis-ci.org/magic-software-lab/ngx-magic-table)
 
+[![codecov](https://codecov.io/gh/magic-software-lab/ngx-magic-table/branch/master/graph/badge.svg)](https://codecov.io/gh/magic-software-lab/ngx-magic-table)
+
 ## Installation
 
 To install this library, run:
