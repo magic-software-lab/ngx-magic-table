@@ -57,7 +57,7 @@ It supports typescript **Date** object and string value in
 
 Example: 
 
-```json
+```javascript
   ...
   {
     field: 'createdAt',
@@ -71,7 +71,7 @@ Values:
 
 * Date Object
 
-```json
+```javascript
  {
 	createdAt: new Date('2011-10-10T14:47:00')
  }
@@ -79,7 +79,7 @@ Values:
 
 * String ISO8601
 
-```json
+```javascript
  {
 	createdAt: '2011-10-10T14:47:00'
  }
@@ -96,7 +96,7 @@ It's necessary to declare format using the pattern object for this pipes:
 
 * DecimalPipe:
 
-```json
+```javascript
  {
     field: 'amount',
     title: 'Amount',
@@ -108,7 +108,7 @@ It's necessary to declare format using the pattern object for this pipes:
 
 * CurrencyPipe:
 
-```json
+```javascript
  {
 	field: 'price',
 	title: 'Price',
@@ -122,7 +122,7 @@ It's necessary to declare format using the pattern object for this pipes:
 
 Value:
 
-```json
+```javascript
  {
 	price: 10.89
  }
