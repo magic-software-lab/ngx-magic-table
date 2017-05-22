@@ -197,7 +197,7 @@ export class AppComponent {
 	 }
 	 
 	 private onEdit(data: any) {
-	    console.log('Editando:', data);
+	    console.log('Editing:', data);
 	 }
 
 }
