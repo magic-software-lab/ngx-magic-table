@@ -236,11 +236,11 @@ Example:
   ...
   
   private onEdit(data: any) {
-    console.log('Editando:', data);
+    console.log('Editing:', data);
   }
 
   private onDelete(data: any) {
-    console.log('Excluindo:', data);
+    console.log('Deleting:', data);
   }
 ```
 
