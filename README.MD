@@ -1,8 +1,6 @@
 # ngx-magic-table
 ### Magic Software
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/magic-software-lab/ngx-magic-table.svg)](https://greenkeeper.io/)
-
 Easy to use table for Angular(4.x.x), it's magic!!
 
 ![Its Magic](http://www.reactiongifs.com/r/mgc.gif)
@@ -15,6 +13,7 @@ This library is in alpha testing, there are some issues to fix and new features 
 [![Angular 2 Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://github.com/mgechev/angular2-style-guide)
 [![Build Status](https://travis-ci.org/magic-software-lab/ngx-magic-table.svg?branch=master)](https://travis-ci.org/magic-software-lab/ngx-magic-table)
 [![codecov](https://codecov.io/gh/magic-software-lab/ngx-magic-table/branch/master/graph/badge.svg)](https://codecov.io/gh/magic-software-lab/ngx-magic-table)
+[![Greenkeeper badge](https://badges.greenkeeper.io/magic-software-lab/ngx-magic-table.svg)](https://greenkeeper.io/)
 
 [![dependencies](https://david-dm.org/magic-software-lab/ngx-magic-table.svg)](https://codecov.io/gh/magic-software-lab/ngx-magic-table)
 [![devDependencies Status](https://david-dm.org/magic-software-lab/ngx-magic-table/dev-status.svg)](https://david-dm.org/magic-software-lab/ngx-magic-table?type=dev)
