@@ -1,6 +1,6 @@
 {
   "name": "@magic-software/ngx-magic-table",
-  "version": "0.1.11",
+  "version": "0.1.13",
   "description": "Easy to use table for Angular(4.x.x), it's magic!!",
   "main": "./ngx-magic-table.umd.js",
   "module": "./ngx-magic-table.es5.js",
@@ -62,6 +62,7 @@
     "@types/node": "^7.0.22",
     "camelcase": "^4.0.0",
     "codecov": "^2.2.0",
+    "codelyzer": "^3.0.1",
     "concurrently": "3.4.0",
     "core-js": "^2.4.1",
     "execa": "^0.6.3",
@@ -85,6 +86,7 @@
     "rxjs": "^5.0.1",
     "systemjs": "^0.20.12",
     "tslint": "^5.3.2",
+    "tslint-jasmine-rules": "^1.2.0",
     "typescript": "^2.2.1",
     "zone.js": "^0.8.4"
   }
