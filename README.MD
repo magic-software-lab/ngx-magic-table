@@ -1,6 +1,8 @@
 # ngx-magic-table
 ### Magic Software
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/magic-software-lab/ngx-magic-table.svg)](https://greenkeeper.io/)
+
 Easy to use table for Angular(4.x.x), it's magic!!
 
 ![Its Magic](http://www.reactiongifs.com/r/mgc.gif)
