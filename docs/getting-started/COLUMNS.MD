@@ -3,7 +3,7 @@
 
 ## Columns
 
-Columns is a array of MagicTableColumn, wich is a interface to declare how will be the behavior of each column of table.
+Columns is an array of MagicTableColumn, which is an interface to declare how will be the behavior of each column of table.
 
 NgxMagicTable treats each datatype with a bind directive to alignment and format values.
 
@@ -127,7 +127,7 @@ Resume:
 
 You can read more [here](https://medium.com/mission-log/design-better-data-tables-430a30a00d8c).
 
-If you are brave and you want to force align, it's possible to define align in column definition:
+If you are brave and you want to force align, it's possible to define alignment in column definition:
 
 ```javascript
   {
@@ -140,7 +140,7 @@ If you are brave and you want to force align, it's possible to define align in c
 ### *Actions
 
 Actions define buttons to ***Call to Action***.
-In must datatables is create action columns to remove rows or navigate to edit page.
+In many datatables you can add action columns to remove rows or navigate to edit page.
 
 Actually, Magic Table provides specific ***easy-to-use*** types of buttons.
 
@@ -221,7 +221,7 @@ Actually, Magic Table provides specific ***easy-to-use*** types of buttons.
    ...
 ```
 
-For declare actions callbacks is must to declare in TableOptions.
+Actions callbacks must to be declare in TableOptions.
 
 Example:
 
