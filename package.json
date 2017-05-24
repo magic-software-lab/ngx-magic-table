@@ -26,8 +26,6 @@
     "clean": "rimraf out-tsc dist \"src/lib/**/*.js\" \"src/lib/**/*.map\"",
     "prebuild": "npm run clean",
     "build": "node build.js",
-    "build-demo": "tsc -p src/demo/",
-    "build-demo:watch": "tsc -p src/demo/ -w",
     "build-scss": "node-sass src/lib -o src/lib --output-style expanded",
     "build-scss:watch": "node-sass src/lib -o src/lib --output-style expanded -w",
     "serve": "lite-server -c=bs-config.json",
@@ -44,11 +42,20 @@
     "integration:jit": "cd integration && npm run e2e",
     "integration:aot": "cd integration && npm run e2e:aot",
     "lint": "tslint ./src/**/*.ts -t verbose",
-    "codecov": "codecov"
+    "codecov": "codecov",
+
+    "link": "npm run build && cd dist && npm link",
+    
+    "build-demo": "cd src/demo && ng build",
+    "serve-demo": "cd src/demo && ng serve",
+    "build-demo-prod": "cd src/demo && ng build --prod",
+    "serve-demo-prod": "cd src/demo && ng serve --prod"
   },
   "peerDependencies": {
     "@angular/core": ">=4.0.0 <5.0.0 || >=4.0.0-beta <5.0.0",
-    "@angular/common": ">=4.0.0 <5.0.0 || >=4.0.0-beta <5.0.0"
+    "@angular/common": ">=4.0.0 <5.0.0 || >=4.0.0-beta <5.0.0",
+    "@angular/platform-browser": ">=4.0.0 <5.0.0 || >=4.0.0-beta <5.0.0",
+    "ngx-bootstrap": "^1.6.6"
   },
   "devDependencies": {
     "@angular/common": "^4.1.3",

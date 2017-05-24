@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'demo-app',
-  template: `
-    <ngx-magic-table [columns]="columns" [data]="data" [tableOptions]="tableOptions"> </ngx-magic-table>
-  `,
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'app works!';
+
   public columns: Array<any>;
   public data: Array<any>;
   public tableOptions: {
