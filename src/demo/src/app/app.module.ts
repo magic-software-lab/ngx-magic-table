@@ -3,22 +3,26 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { BsDropdownModule, PaginationModule, CollapseModule } from 'ngx-bootstrap';
+import { BsDropdownModule, PaginationModule, CollapseModule, TabsModule } from 'ngx-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
 import { NgxMagicTableModule } from '@magic-software/ngx-magic-table';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { DemoComponent } from './demo/demo.component';
+
+import { MainDemoComponent } from './demos/main-demo/main-demo.component';
+import { MainDemoSectionComponent } from './demos/main-demo-section/main-demo-section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LandingPageComponent,
-    DemoComponent
+    MainDemoComponent,
+    MainDemoSectionComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +31,12 @@ import { DemoComponent } from './demo/demo.component';
     BsDropdownModule.forRoot(),
     PaginationModule.forRoot(),
     CollapseModule.forRoot(),
+    TabsModule.forRoot(),
     InfiniteScrollModule,
+    HighlightJsModule,
     NgxMagicTableModule
   ],
-  providers: [],
+  providers: [ HighlightJsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

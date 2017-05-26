@@ -7,6 +7,25 @@
     padding-top: 60px;
 }
 
+.has-padding-bottom {
+    padding-bottom: 60px;
+}
+
+.magic-gradient {
+    background-image: linear-gradient(to top, #1c8baf 0%, #249a63 100%);
+}
+
 .magic-blue {
-    background-color: #0088aa;
+    background-color:#1c8baf;;
+}
+
+.btn-magic-transparent {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+}
+
+.btn-magic-transparent:hover {
+    color: #1f9190;
+    background-color: white;
 }

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  selector: 'app-main-demo',
+  templateUrl: './main-demo.component.html',
+  styleUrls: ['./main-demo.component.scss']
 })
-export class DemoComponent implements OnInit {
+export class MainDemoComponent implements OnInit {
 
   public columns: Array<any>;
   public data: Array<any>;
