@@ -1,11 +1,5 @@
-<tabset #staticTabs>
-    <tab heading="Example">
-      <app-main-demo></app-main-demo>
-    </tab>
-    <tab heading="Markup">
-       <pre class="prettyprint linenums lang-html">{{main.html}}</pre>
-    </tab>
-    <tab heading="TypeScript">
-       <pre class="prettyprint linenums lang-js">{{main.component}}</pre>
-    </tab>
-</tabset>
+<demo-section 
+  [component]="demoComponent" 
+  [html]="demoFiles.html"
+  [ts]="demoFiles.ts">
+</demo-section>

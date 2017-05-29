@@ -1,45 +1,41 @@
-import { Component, Input, SecurityContext } from '@angular/core';
+import { Component, Input, ViewChild, ViewContainerRef, ComponentFactoryResolver, OnChanges, SimpleChange } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'demo-section',
-  templateUrl: './demo-section.component.html'
+  templateUrl: './demo-section.component.html',
+  styleUrls: ['./demo-section.component.scss']
 })
-export class DemoSectionComponent {
-  @Input() public name: string;
-  @Input() public src: string;
+export class DemoSectionComponent implements OnChanges {
   @Input() public html: string;
   @Input() public ts: string;
+  @Input() public component: any;
 
-  @Input()
-  public get titleDoc(): string {
-    return this._titleDoc;
+  @ViewChild('demoComponent', {read: ViewContainerRef})
+  public demoContainer: ViewContainerRef;
+
+  private demoComponent: any;
+
+  public constructor(private componentFactoryResolver: ComponentFactoryResolver) {
+    
   }
 
-  public set titleDoc(value: string) {
-    if (this._sanitizer) {
-      this._titleDoc = this._sanitizer
-        .sanitize(SecurityContext.HTML, value);
+  ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
+    this.createDemoComponent();
+  }
+
+  private createDemoComponent() {
+    if (this.component) {
+      this.destroyDemoComponent();
+
+      const demoComponentFactory = this.componentFactoryResolver.resolveComponentFactory(this.component); 
+      this.demoComponent = this.demoContainer.createComponent(demoComponentFactory);
     }
   }
 
-  @Input()
-  public get doc(): string {
-    return this._doc;
-  }
-
-  public set doc(value: string) {
-    if (this._sanitizer) {
-      this._doc = this._sanitizer
-        .sanitize(SecurityContext.HTML, value);
+  private destroyDemoComponent() {
+    if (this.demoComponent) {
+      this.demoComponent.destroy();
     }
-  }
-
-  private _doc: string;
-  private _titleDoc: string;
-  private _sanitizer: DomSanitizer;
-
-  public constructor(_sanitizer: DomSanitizer) {
-    this._sanitizer = _sanitizer;
   }
 }

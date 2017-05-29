@@ -41,6 +41,7 @@ import { MainDemoSectionComponent } from './demos/main-demo-section/main-demo-se
     NgxMagicTableModule
   ],
   providers: [ ],
+  entryComponents: [MainDemoComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

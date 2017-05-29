@@ -24,7 +24,8 @@
       </div>
     </div>
 
-    <div class="row text-center section-half-margin">
+    <div class="row text-center section-half-margin"
+     >
       <div class="col">
         <a href="https://travis-ci.org/magic-software-lab/ngx-magic-table"><img src="https://camo.githubusercontent.com/dbc65223715646effd85ad588716249f6ab051d9/68747470733a2f2f7472617669732d63692e6f72672f6d616769632d736f6674776172652d6c61622f6e67782d6d616769632d7461626c652e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/magic-software-lab/ngx-magic-table.svg?branch=master" style="max-width:100%;"></a>      
         <a href="https://www.npmjs.com/package/@magic-software/ngx-magic-table"><img src="https://img.shields.io/npm/v/@magic-software/ngx-magic-table.svg" alt="Current version"></a>
@@ -35,7 +36,7 @@
   </div>
 </div>
 
-<div class="row magic-blue has-header">
+<div class="row magic-blue has-header" >
   <div class="col-sm-8 offset-sm-2">
 
     <div class="ontop container">
@@ -50,7 +51,12 @@
   </div>
 </div>
 
-<div class="row magic-blue has-header">
+<div class="row magic-blue has-header"  infiniteScroll
+		    [infiniteScrollDistance]="0.5"
+		    [infiniteScrollUpDistance]="1.5"
+		    [infiniteScrollThrottle]="500"
+		    (scrolled)="onScrollDown()"
+		    (scrolledUp)="onScrollUp()">
   <div class="col-sm-8 offset-sm-2">
 
 

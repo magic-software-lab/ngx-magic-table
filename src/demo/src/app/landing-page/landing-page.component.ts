@@ -16,4 +16,12 @@ export class LandingPageComponent implements OnInit {
     window.open(url);
   }
 
+  	onScrollDown () {
+	    console.log('scrolled down!!')
+	}
+
+	onScrollUp () {
+    	console.log('scrolled up!!')
+    }
+
 }

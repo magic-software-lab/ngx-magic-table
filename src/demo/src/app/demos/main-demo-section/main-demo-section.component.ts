@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainDemoComponent } from './main-demo/main-demo.component';
 
 @Component({
   selector: 'app-main-demo-section',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainDemoSectionComponent implements OnInit {
 
-  public main =  {
-    component: require('!!raw-loader?lang=typescript!./main-demo/main-demo.component'),
+  public demoComponent = MainDemoComponent;
+
+  public demoFiles =  {
+    ts: require('!!raw-loader?lang=typescript!./main-demo/main-demo.component'),
     html: require('!!raw-loader?lang=markup!./main-demo/main-demo.component.html')
   };
 
