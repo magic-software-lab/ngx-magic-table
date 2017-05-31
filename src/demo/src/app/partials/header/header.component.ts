@@ -22,20 +22,19 @@ export class HeaderComponent implements OnInit {
   public activateMenu = '/';
   public menus:any = [
     { name: 'Home',
-      route: '#',
-      type: 'link',
-      target: '_self'
+      route: '',
+      type: 'navigate'
     },
     {
       name: 'Getting started',
       route: '#getStarted',
-      type: 'scrolling'
+      type: 'scrolling',
+      page: ''
     },
     {
       name: 'Demos',
       route: 'demos',
-      type: 'link',
-      target: '_self'
+      type: 'navigate'
     },
     {
       name: 'Docs',
@@ -56,8 +55,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.routerEventSubscription = this.router.events.subscribe((event:any) => {
       this.homeActive = this.router.isActive('', true);
-      console.log(this.homeActive);
-      
     });
   }
 
@@ -77,9 +74,17 @@ export class HeaderComponent implements OnInit {
     
   }
 
-  public scrollingTo(id): void {
-      let pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({document: document, scrollTarget: id});
-      this.pageScrollService.start(pageScrollInstance);
-  };
+  public scrollingTo(menu): void {
+    if (!this.router.isActive(menu.page, true)) {
+      this.router.navigate([menu.page]).then(() => this.doScrollingTo(menu.route));
+    } else {
+      this.doScrollingTo(menu.route);
+    }
+  }
+
+  public doScrollingTo(id): void {
+    let pageScrollInstance: PageScrollInstance = PageScrollInstance.newInstance({document: document, scrollTarget: id});
+    this.pageScrollService.start(pageScrollInstance);
+  }
 
 }

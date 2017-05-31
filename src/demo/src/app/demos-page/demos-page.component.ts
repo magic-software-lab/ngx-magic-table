@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 
+import { PrettifyWrapperService } from '../shared/shared.module';
+
 import { SimpleDemoSectionComponent, SortDemoSectionComponent } from '../demo/demo.module';
 
 @Component({
@@ -26,7 +28,9 @@ export class DemosPageComponent implements OnInit {
 
   private demoComponent: any;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver, 
+    private prettify: PrettifyWrapperService) { }
 
   ngOnInit() {
     this.changeDemo(this.demos[0]);
@@ -43,6 +47,7 @@ export class DemosPageComponent implements OnInit {
       
     const demoComponentFactory = this.componentFactoryResolver.resolveComponentFactory(component); 
     this.demoComponent = this.demoContainer.createComponent(demoComponentFactory);
+    this.prettify.prettyPrint();
   }
 
   private destroyDemoComponent() {

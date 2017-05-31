@@ -6,7 +6,7 @@
   <button class="navbar-toggler navbar-toggler-right" (click)="isCollapsed = !isCollapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a *ngIf="!scrollTop || !isCollapsed || !homeActive" class="navbar-brand magic-color magic-font" href="#">Magic Table</a>
+  <a *ngIf="!scrollTop || !isCollapsed || !homeActive" class="navbar-brand magic-color magic-font" [routerLink]="['']" href="#">Magic Table</a>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
       <li *ngFor="let menu of menus" class="nav-item" [ngClass]="(activateMenu === menu.route)?'active':''">
@@ -14,7 +14,7 @@
 
         <a class="nav-link" role="button" *ngIf="menu.type === 'navigate'" [routerLink]="[menu.route]">{{ menu.name }}</a>
 
-        <a class="nav-link" role="button" *ngIf="menu.type === 'scrolling'" (click)="scrollingTo(menu.route)">{{ menu.name }}</a>
+        <a class="nav-link" role="button" *ngIf="menu.type === 'scrolling'" (click)="scrollingTo(menu)">{{ menu.name }}</a>
       </li>
     </ul>
   </div>
@@ -42,7 +42,7 @@
       </div>
     </a>
 
-    <a role="button" *ngIf="menu.type === 'scrolling'" (click)="scrollingTo(menu.route)" (click)="isCollapsed = true">
+    <a role="button" *ngIf="menu.type === 'scrolling'" (click)="scrollingTo(menu)" (click)="isCollapsed = true">
       <div class="row">
         <div class="col">
           {{ menu.name }}
