@@ -7,6 +7,10 @@
     padding-top: 60px;
 }
 
+.padding-content {
+    padding-top: 30px;
+}
+
 .has-padding-bottom {
     padding-bottom: 60px;
 }
@@ -15,12 +19,20 @@
     background-image: linear-gradient(to top, #1c8baf 0%, #249a63 100%);
 }
 
+.magic-gradient-inverse {
+    background-image: linear-gradient(to top, #249a63 0%, #1c8baf 100%);
+}
+
 .magic-blue {
     background-color:#1c8baf;;
 }
 
 .white-bg {
     background:#ffffff !important;
+}
+
+.transparent-bg {
+    background: transparent !important;
 }
 
 .btn-magic-transparent {

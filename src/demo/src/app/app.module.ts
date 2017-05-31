@@ -3,30 +3,30 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { BsDropdownModule, PaginationModule, CollapseModule, TabsModule } from 'ngx-bootstrap';
+import { BsDropdownModule, PaginationModule, CollapseModule } from 'ngx-bootstrap';
+import { SharedModule } from './shared/shared.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-
-import { NgxMagicTableModule } from '@magic-software/ngx-magic-table';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { DemoModule } from './demo/demo.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
+import { FooterComponent } from './partials/footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-
-import { DemoSectionComponent } from './demos/demo-section/demo-section.component';
-
-import { MainDemoComponent } from './demos/main-demo-section/main-demo/main-demo.component';
-import { MainDemoSectionComponent } from './demos/main-demo-section/main-demo-section.component';
+import { GetStartedComponent } from './get-started/get-started.component';
+import { DemosPageComponent } from './demos-page/demos-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LandingPageComponent,
-    MainDemoComponent,
-    MainDemoSectionComponent,
-    DemoSectionComponent
+    GetStartedComponent,
+    DemosPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,12 +36,12 @@ import { MainDemoSectionComponent } from './demos/main-demo-section/main-demo-se
     BsDropdownModule.forRoot(),
     PaginationModule.forRoot(),
     CollapseModule.forRoot(),
-    TabsModule.forRoot(),
     InfiniteScrollModule,
-    NgxMagicTableModule
+    Ng2PageScrollModule.forRoot(),
+    SharedModule,
+    DemoModule
   ],
   providers: [ ],
-  entryComponents: [MainDemoComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

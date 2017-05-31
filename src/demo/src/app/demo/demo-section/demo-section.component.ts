@@ -27,7 +27,7 @@ export class DemoSectionComponent implements OnChanges {
   private createDemoComponent() {
     if (this.component) {
       this.destroyDemoComponent();
-
+      
       const demoComponentFactory = this.componentFactoryResolver.resolveComponentFactory(this.component); 
       this.demoComponent = this.demoContainer.createComponent(demoComponentFactory);
     }

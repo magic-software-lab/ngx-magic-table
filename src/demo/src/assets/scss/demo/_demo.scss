@@ -1,0 +1,19 @@
+$padding-top: 40px;
+
+.demo-section {
+    padding-bottom: 30px;
+    
+    h1 {
+        font-family: 'Roboto';
+        
+    }
+
+    .demo-component {
+        padding-top: $padding-top;
+        
+    }
+
+    .demo-source {
+        padding-top: $padding-top;
+    }
+}

@@ -2,14 +2,58 @@
     color: #0088aa;
 }
 
+.navbar-white {
+    background:#ffffff !important;
+
+     .nav-link {
+        color: black;
+        font-family: 'Roboto';
+    }
+
+    .nav-link:hover {
+        color: white;
+        background-color: #1f9190;
+        border-radius: 5px;
+    }
+}
+
+.navbar-transparent {
+    background: transparent !important;
+
+    .nav-link {
+        color: white;
+        font-family: 'Roboto';
+    }
+
+    .nav-link:hover {
+        color: #1f9190;
+        background-color: white;
+        border-radius: 5px;
+    }
+}
+
+.card-header {
+    background-color: white;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+
+    a {
+        text-decoration: none;        
+        color: black;
+        font-family: 'Roboto';
+        line-height: 3em;
+    }
+
+    .well:hover {
+        background-color: #efefef;
+    }
+}
+
 .menu-collapsed-fixed {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1029;
-}
-
-nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.fixed-top {
-    background-color: transparent;
 }

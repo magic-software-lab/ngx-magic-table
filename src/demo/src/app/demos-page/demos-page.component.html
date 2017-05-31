@@ -1,0 +1,21 @@
+<div class="demo-page ">
+
+  <div class="has-header">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 col-lg-2 ">
+
+          <ul class="nav flex-column">
+            <li *ngFor="let demo of demos" class="nav-item">
+              <a class="nav-link active" role="button" (click)="changeDemo(demo)">{{ demo.title }}</a>
+            </li>
+      
+          </ul>        
+
+      </div>
+      <div class="col-sm-9 col-md-10 col-lg-10">
+        <div #demoComponent>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

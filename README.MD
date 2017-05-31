@@ -40,7 +40,7 @@ You will need bootstrap styles (Bootstrap 3)
 Or Bootstrap 4
 
 ```
-<!--- index.html -->
+<!--- index.html -->o
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
 ```
 To enable bootstrap 4 theme templates in ngx-bootstrap, please read
