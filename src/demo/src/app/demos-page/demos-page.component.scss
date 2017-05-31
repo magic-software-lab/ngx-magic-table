@@ -1,0 +1,43 @@
+.demo-page {
+    min-height: 80vh;
+    
+    .has-header {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+    }
+
+    .header-info {
+        padding-left: 20px;
+        line-height: 0.5em;
+
+        p {
+            font-size: 0.7em;
+            line-height: 0.5em;
+        }
+
+        h1 {
+            font-size: 1em;
+            line-height: 0.5em;
+        }
+    }
+
+    a.nav-link.activate {
+        background-color: #1c8baf;
+        border-radius: 5px;
+        color: white;
+    }
+
+    @media (max-width: 575px) {
+        ul { 
+            flex-direction: row !important;
+            flex-wrap: wrap;
+         }
+
+         .nav {
+             margin-top: 20px;
+             margin-bottom: 20px;
+         }
+    }
+
+}

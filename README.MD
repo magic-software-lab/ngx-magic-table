@@ -3,8 +3,9 @@
 
 Easy to use table for Angular(4.x.x), it's magic!!
 
-![Its Magic](http://www.reactiongifs.com/r/mgc.gif)
 
+
+![Its Magic](http://www.reactiongifs.com/r/mgc.gif)
 
 ### Warning
 
@@ -19,6 +20,9 @@ This library is in alpha testing, there are some issues to fix and new features 
 [![devDependencies Status](https://david-dm.org/magic-software-lab/ngx-magic-table/dev-status.svg)](https://david-dm.org/magic-software-lab/ngx-magic-table?type=dev)
 [![peerDependencies Status](https://david-dm.org/magic-software-lab/ngx-magic-table/peer-status.svg)](https://david-dm.org/magic-software-lab/ngx-magic-table?type=peer)
 
+## Live Demo
+
+Live demo is available [HERE](https://magic-software-lab.github.io/ngx-magic-table/).
 
 ## Installation
 
@@ -40,7 +44,7 @@ You will need bootstrap styles (Bootstrap 3)
 Or Bootstrap 4
 
 ```
-<!--- index.html -->
+<!--- index.html -->o
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
 ```
 To enable bootstrap 4 theme templates in ngx-bootstrap, please read

@@ -1,0 +1,18 @@
+<tabset #staticTabs>
+    <tab heading="Example">
+      <div class="white-bg">
+        <div #demoComponent>
+        </div>
+      </div>
+    </tab>
+    <tab heading="Markup" *ngIf="html">
+      <div class="vertical-scroll">
+        <pre class="prettyprint linenums lang-html">{{html}}</pre>
+      </div>
+    </tab>
+    <tab heading="TypeScript" *ngIf="ts">
+        <div class="vertical-scroll">
+          <pre class="prettyprint linenums lang-js">{{ts}}</pre>
+        </div>
+    </tab>
+</tabset>
