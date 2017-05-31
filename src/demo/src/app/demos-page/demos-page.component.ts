@@ -2,7 +2,13 @@ import { Component, OnInit, ViewChild, ViewContainerRef, ComponentFactoryResolve
 
 import { PrettifyWrapperService } from '../shared/shared.module';
 
-import { SimpleDemoSectionComponent, SortDemoSectionComponent } from '../demo/demo.module';
+import { SimpleDemoSectionComponent, 
+         SortDemoSectionComponent,
+         AlignDemoSectionComponent,
+         FormattingDemoSectionComponent,
+         SimpleButtonDemoSectionComponent,
+         ButtonGroupDemoSectionComponent,
+         DropdownDemoSectionComponent } from '../demo/demo.module';
 
 @Component({
   selector: 'app-demos-page',
@@ -23,6 +29,26 @@ export class DemosPageComponent implements OnInit {
     {
       title: 'Sort',
       component: SortDemoSectionComponent
+    },
+    {
+      title: 'Alignment',
+      component: AlignDemoSectionComponent
+    },
+    {
+      title: 'Formatting',
+      component: FormattingDemoSectionComponent
+    },
+    {
+      title: 'Simple button',
+      component: SimpleButtonDemoSectionComponent
+    },
+    {
+      title: 'Button group',
+      component: ButtonGroupDemoSectionComponent
+    },
+    {
+      title: 'Dropdown',
+      component: DropdownDemoSectionComponent
     }
   ];
 

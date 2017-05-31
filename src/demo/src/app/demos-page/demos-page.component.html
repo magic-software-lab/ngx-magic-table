@@ -6,7 +6,9 @@
 
           <ul class="nav flex-column">
             <li *ngFor="let demo of demos" class="nav-item">
-              <a class="nav-link active" role="button" (click)="changeDemo(demo)">{{ demo.title }}</a>
+              <a class="nav-link text-center" role="button" (click)="changeDemo(demo)" [ngClass]="(demoActivate.title === demo.title)?'activate':''">
+                {{ demo.title }}
+              </a>
             </li>
       
           </ul>        

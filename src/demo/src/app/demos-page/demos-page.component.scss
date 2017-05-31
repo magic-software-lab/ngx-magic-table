@@ -22,9 +22,16 @@
         }
     }
 
+    a.nav-link.activate {
+        background-color: #1c8baf;
+        border-radius: 5px;
+        color: white;
+    }
+
     @media (max-width: 575px) {
         ul { 
             flex-direction: row !important;
+            flex-wrap: wrap;
          }
 
          .nav {
