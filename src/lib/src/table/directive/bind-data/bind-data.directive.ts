@@ -2,7 +2,7 @@ import { Directive, ElementRef, OnChanges, Input, SimpleChange, Renderer } from 
 import { DatePipe, CurrencyPipe, DecimalPipe } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import { MagicTableColumn } from '../../model/magic-table-options';
+import { MagicTableColumn } from '../../model/table.model';
 
 @Directive({
   selector: '[bindData]'

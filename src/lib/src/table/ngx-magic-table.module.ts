@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule, DatePipe, CurrencyPipe, DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import { NgxMagicPaginationModule } from '../pagination/index';
 import { BsDropdownModule, PaginationModule } from 'ngx-bootstrap';
 
 import { NgxMagicTableComponent } from './component/table/magic-table.component';
@@ -15,6 +16,7 @@ import { NgxMagicTableObjectUtilsService } from './service/object-utils';
   imports: [
     CommonModule,
     FormsModule,
+    NgxMagicPaginationModule,
     BsDropdownModule.forRoot(),
     PaginationModule.forRoot()
   ],

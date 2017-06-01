@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter, SimpleChange } from '@angular/core';
 
-import { MagicTableOptions, MagicTableColumns, MagicTableColumn, MagicTableOptionsPagination } from '../../model/magic-table-options';
+import { MagicTableOptions, MagicTableColumns, MagicTableColumn, MagicPaginationOptions } from '../../model/table.model';
 import { NgxMagicTableObjectUtilsService } from '../../service/object-utils';
 
 @Component({
@@ -67,7 +67,7 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
   private sorting: any;
   private configTableChanged: any;
 
-  private pagination: MagicTableOptionsPagination = {
+  private pagination: MagicPaginationOptions = {
     page: 1,
     numPages: 1,
     itemsPerPage: 5,

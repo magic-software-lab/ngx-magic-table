@@ -1,10 +1,4 @@
-export interface MagicTableOptionsPagination {
-  page: number;
-  itemsPerPage: number;
-  maxSize: number;
-  numPages: number;
-  length: number;
-}
+import { MagicPaginationOptions } from '../../pagination/index';
 
 export interface MagicTableActionButton {
     title: string;
@@ -39,6 +33,8 @@ export interface MagicTableColumn {
 export declare type MagicTableColumns = MagicTableColumn[];
 
 export interface MagicTableOptions {
-    pagination?: MagicTableOptionsPagination;
+    pagination?: MagicPaginationOptions;
     api?: Object;
 }
+
+export { MagicPaginationOptions };

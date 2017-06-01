@@ -1,7 +1,7 @@
 import { Directive, OnChanges, Input, Output, EventEmitter,
          HostListener, ElementRef, Renderer, SimpleChange } from '@angular/core';
 
-import { MagicTableColumn } from '../../model/magic-table-options';
+import { MagicTableColumn } from '../../model/table.model';
 
 @Directive({
   selector: '[sortedColumn]'
