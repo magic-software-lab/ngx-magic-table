@@ -232,6 +232,11 @@ Common tasks are present as npm scripts:
 - `npm run integration` to run the integration e2e tests
 - `npm install ./relative/path/to/lib` after `npm run build` to test locally in another app
 
+## Roadmap
+
+Do you want to know our feature roadmap? Check [here](https://github.com/magic-software-lab/ngx-magic-table/blob/master/ROADMAP.MD).
+
+
 ## License
 
 MIT © [Eron Rodrigues Alves](mailto:eronra@gmail.com)
