@@ -11,7 +11,8 @@ June/2017
 * Finish the implementation of callbacks to use pagination, sort and other features from **back-side** (Client-side features turn off).
 * Filtering (Client and back sides).
 * Add **test coverage** and improve tests.
-* Publish **version 1.0.0-beta**.
+* Improve **docs** and **demo** pages.
+* Publish **version 1.0.0**.
 
 July/2017
 
