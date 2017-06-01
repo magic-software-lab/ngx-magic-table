@@ -1,6 +1,6 @@
 {
   "name": "@magic-software/ngx-magic-table",
-  "version": "0.1.13",
+  "version": "0.1.13.5",
   "description": "Easy to use table for Angular(4.x.x), it's magic!!",
   "main": "./ngx-magic-table.umd.js",
   "module": "./ngx-magic-table.es5.js",
@@ -22,10 +22,18 @@
     "node": ">= 6.9.0",
     "npm": ">= 3.0.0"
   },
+  "watch": {
+    "build": {
+      "patterns": ["src/lib"],
+      "extensions": "ts, json, html, css",
+      "quiet": true
+    }
+  },
   "scripts": {
     "clean": "rimraf out-tsc dist \"src/lib/**/*.js\" \"src/lib/**/*.map\"",
     "prebuild": "npm run clean",
     "build": "node build.js",
+    "build:watch": "npm-watch build",
     "build-scss": "node-sass src/lib -o src/lib --output-style expanded",
     "build-scss:watch": "node-sass src/lib -o src/lib --output-style expanded -w",
     "serve": "lite-server -c=bs-config.json",
@@ -43,14 +51,15 @@
     "integration:aot": "cd integration && npm run e2e:aot",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "codecov": "codecov",
-
+    "publish": "cd dist && npm publish --access public",
     "link": "npm run build && cd dist && npm link",
-    
+    "link-demo": "npm run link && cd src/demo && npm link ${npm_package_name}",
+    "unlink": "cd dist && npm unlink",
+    "unlink-demo": "cd src/demo && npm unlink ${npm_package_name} && npm run unlink",
     "build-demo": "cd src/demo && ng build",
     "serve-demo": "cd src/demo && ng serve",
     "build-demo-prod": "cd src/demo && ng build --prod",
     "serve-demo-prod": "cd src/demo && ng serve --prod",
-
     "prepare-gh-pages": "cd src/demo && ng build --prod --base-href 'https://magic-software-lab.github.io/ngx-magic-table/'",
     "gh-pages": "npm run prepare-gh-pages && ngh --dir dist-demo"
   },
@@ -89,6 +98,7 @@
     "lite-server": "^2.2.2",
     "ngx-bootstrap": "^1.6.6",
     "node-sass": "^4.5.2",
+    "npm-watch": "^0.1.9",
     "rimraf": "^2.6.1",
     "rollup": "^0.41.5",
     "rollup-plugin-sourcemaps": "^0.4.1",
