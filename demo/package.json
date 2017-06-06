@@ -28,7 +28,8 @@
     "ngx-clipboard": "^8.0.2",
     "ngx-infinite-scroll": "^0.5.1",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "@magic-software/ngx-magic-table": "../../dist"
   },
   "devDependencies": {
     "@angular/cli": "1.0.4",
