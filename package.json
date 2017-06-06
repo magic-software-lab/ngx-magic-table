@@ -54,8 +54,8 @@
     "pretest:once": "npm run build-test",
     "test:once": "karma start karma.conf.js --single-run",
 
-    "preintegration": "npm run build && npm run clean && npm install",
-    "integration": "npm run reload-demo && cd demo && ng e2e",
+    "preintegration": "npm run clean && npm run build && cd demo && npm install",
+    "integration": "cd demo && ng e2e",
 
     "reload-demo": "cd demo && npm cache clean && npm install",
     "build-demo": "cd demo && ng build",
