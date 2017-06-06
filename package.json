@@ -1,6 +1,6 @@
 {
   "name": "@magic-software/ngx-magic-table",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Easy to use table for Angular(4.x.x), it's magic!!",
   "main": "./ngx-magic-table.umd.js",
   "module": "./ngx-magic-table.es5.js",
