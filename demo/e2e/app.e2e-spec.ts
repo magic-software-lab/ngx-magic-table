@@ -1,4 +1,5 @@
 import { NgxMagicTableDemoPage } from './app.po';
+import { browser, element, by } from 'protractor';
 
 describe('ngx-magic-table-demo App', () => {
   let page: NgxMagicTableDemoPage;
