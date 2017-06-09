@@ -59,7 +59,7 @@
     "reload-demo": "cd demo && npm cache clean && npm install",
     "build-demo": "cd demo && ng build",
     "serve-demo": "cd demo && ng serve",
-    "serve-demo:watch": "concurrently \"npm run build:watch\"  \"ttab 'sleep 2 && npm run serve-demo'\"",
+    "serve-demo:watch": "concurrently \"npm run build:watch\"  \"ttab 'sleep 8 && npm run serve-demo'\"",
     "build-demo-prod": "cd demo && ng build --prod",
     "serve-demo-prod": "cd demo && ng serve --prod",
     "prepare-gh-pages": "cd demo && ng build --prod --base-href 'https://magic-software-lab.github.io/ngx-magic-table/'",
@@ -110,7 +110,6 @@
     "systemjs": "^0.20.12",
     "tslint": "^5.4.2",
     "tslint-jasmine-rules": "^1.3.0",
-    "ttab": "^0.5.1",
     "typescript": "^2.2.1",
     "zone.js": "^0.8.4"
   }
