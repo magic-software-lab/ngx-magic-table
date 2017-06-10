@@ -18,12 +18,5 @@ import { NgxMagicPaginationComponent } from './component/magic-pagination.compon
   ]
 })
 export class NgxMagicPaginationModule {
-  // public static forRoot(): ModuleWithProviders {
-  //   return {
-  //     ngModule: NgxMagicTableModule,
-  //     providers: [
 
-  //     ]
-  //   };
-  // }
 }

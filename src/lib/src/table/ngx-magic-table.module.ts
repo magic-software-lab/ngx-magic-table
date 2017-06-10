@@ -40,12 +40,5 @@ import { NgxMagicTableObjectUtilsService } from './service/object-utils';
   ]
 })
 export class NgxMagicTableModule {
-  // public static forRoot(): ModuleWithProviders {
-  //   return {
-  //     ngModule: NgxMagicTableModule,
-  //     providers: [
 
-  //     ]
-  //   };
-  // }
 }
