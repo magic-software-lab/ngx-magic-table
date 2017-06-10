@@ -9,6 +9,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
+    "module": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -17,17 +18,9 @@
       "dom"
     ],
     "paths": {
-      "@magic-software/ngx-magic-table": [
-        "../node_modules/@magic-software/ngx-magic-table"
-      ],
-      "@angular/common": ["../node_modules/@angular/common"], 
-      "@angular/compiler": ["../node_modules/@angular/compiler"],
-      "@angular/core": ["../node_modules/@angular/core"],
-      "@angular/forms": ["../node_modules/@angular/forms"],
-      "@angular/platform-browser": ["../node_modules/@angular/platform-browser"],
-      "@angular/platform-browser-dynamic": ["../node_modules/@angular/platform-browser-dynamic"],
-      "@angular/router": ["../node_modules/@angular/router"],
-      "@angular/http": ["../node_modules/@angular/http"]
-  }
+     "@angular/*": [
+        "../node_modules/@angular/*"
+      ]
+    }
   }
 }

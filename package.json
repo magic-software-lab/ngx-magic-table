@@ -24,7 +24,9 @@
   },
   "watch": {
     "build": {
-      "patterns": ["src/lib"],
+      "patterns": [
+        "src/lib"
+      ],
       "extensions": "ts, json, html, css",
       "quiet": true
     }
@@ -41,25 +43,23 @@
     "start": "concurrently \"npm run build-scss:watch\" \"npm run build-demo:watch\" \"npm run serve\"",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "codecov": "codecov",
-
     "publish": "cd dist && npm publish --access public",
     "link": "npm run build && cd dist && npm link",
+    "link-demo": "cd demo/ && npm link ${npm_package_name}",
     "unlink": "cd dist && npm unlink",
     "unlink-demo": "cd demo && npm unlink ${npm_package_name} && npm run unlink",
-
     "build-test": "tsc -p src/lib/tsconfig.spec.json",
     "build-test:watch": "tsc -p src/lib/tsconfig.spec.json -w",
     "pretest": "npm run build-test",
     "test": "concurrently \"npm run build-test:watch\" \"karma start karma.conf.js\"",
     "pretest:once": "npm run build-test",
     "test:once": "karma start karma.conf.js --single-run",
-
     "preintegration": "npm run clean && npm run build && cd demo && npm install",
     "integration": "cd demo && ng e2e",
-
     "reload-demo": "cd demo && npm cache clean && npm install",
     "build-demo": "cd demo && ng build",
     "serve-demo": "cd demo && ng serve",
+    "serve-demo:watch": "concurrently \"npm run build:watch\"  \"ttab 'sleep 8 && npm run serve-demo'\"",
     "build-demo-prod": "cd demo && ng build --prod",
     "serve-demo-prod": "cd demo && ng serve --prod",
     "prepare-gh-pages": "cd demo && ng build --prod --base-href 'https://magic-software-lab.github.io/ngx-magic-table/'",
@@ -84,7 +84,7 @@
     "camelcase": "^4.0.0",
     "codecov": "^2.2.0",
     "codelyzer": "^3.0.1",
-    "concurrently": "3.4.0",
+    "concurrently": "^3.4.0",
     "core-js": "^2.4.1",
     "execa": "^0.6.3",
     "glob": "^7.1.1",
@@ -100,6 +100,7 @@
     "lite-server": "^2.2.2",
     "ngx-bootstrap": "^1.7.1",
     "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
     "npm-watch": "^0.1.9",
     "rimraf": "^2.6.1",
     "rollup": "^0.42.0",
