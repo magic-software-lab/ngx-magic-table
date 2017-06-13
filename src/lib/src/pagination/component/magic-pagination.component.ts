@@ -33,7 +33,7 @@ export class NgxMagicPaginationComponent implements OnInit, OnChanges {
 
     ngOnChanges(changes: SimpleChanges) {
       if (changes['options']) {
-        this.options.onChange.subscribe(this.onChangeOptions);
+        this.options.onChange.subscribe(this.onChangeOptions.bind(this));
       }
     }
 
@@ -44,7 +44,5 @@ export class NgxMagicPaginationComponent implements OnInit, OnChanges {
     private refresh() {
       console.log('refresh');
     }
-
-    
 
 }

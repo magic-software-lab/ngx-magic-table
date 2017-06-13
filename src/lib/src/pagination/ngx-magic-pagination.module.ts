@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SharedModule } from '../shared/index';
 import { NgxMagicPaginationComponent } from './component/magic-pagination.component';
+import { PaginationConfigService } from './service/pagination-config.service';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { NgxMagicPaginationComponent } from './component/magic-pagination.compon
     NgxMagicPaginationComponent
   ],
   providers: [
-
+    PaginationConfigService
   ]
 })
 export class NgxMagicPaginationModule {

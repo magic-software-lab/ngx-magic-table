@@ -18,36 +18,36 @@ export interface IMagicPaginationOptions  {
   maxSize: number;
 
   /** if false first and last buttons will be hidden */
-  boundaryLinks: boolean;
+  boundaryLinks?: boolean;
 
   /** if false previous and next buttons will be hidden */
-  directionLinks: boolean;
+  directionLinks?: boolean;
 
   // labels
   /** first button text */
-  firstText: string;
+  firstText?: string;
 
   /** previous button text */
-  previousText: string;
+  previousText?: string;
 
   /** next button text */
-  nextText: string;
+  nextText?: string;
 
   /** last button text */
-  lastText: string;
+  lastText?: string;
 
   /** if true current page will in the middle of pages list */
-  rotate: boolean;
+  rotate?: boolean;
 
   // css
   /** add class to <li> */
-  pageBtnClass: string;
+  pageBtnClass?: string;
 
   /** if true pagination component will be disabled */
-  disabled: boolean;
+  disabled?: boolean;
 }
 
-export class MagicPaginationOptions {
+export class MagicPaginationOptions implements IMagicPaginationOptions {
 
     private _page: number;
     public get page() { return this._page; }
@@ -140,7 +140,6 @@ export class MagicPaginationOptions {
       this.changed('disabled');
     }
 
-
     public onChange: EventEmitter<string> = new EventEmitter<string>();
 
     constructor(options: IMagicPaginationOptions) {
@@ -154,14 +153,10 @@ export class MagicPaginationOptions {
 
     private doAssign(options: IMagicPaginationOptions) {
        for (const prop in options) {
-        if (this.hasOwnProperty(this.addUnderscore(prop))) {
-          this[prop] = options[this.addUnderscore(prop)];
+        if (options[prop]) {
+          this[prop] = options[prop];
         }
       }
-    }
-
-    private addUnderscore(attributeName: string): string {
-      return '_'.concat(attributeName);
     }
 
     private changed(attributeName?: string) {

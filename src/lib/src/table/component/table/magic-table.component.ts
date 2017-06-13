@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter, SimpleChange } from '@angular/core';
 
-import { MagicPaginationOptions } from '../../../pagination/index';
+import { MagicPaginationOptions, PaginationConfigService } from '../../../pagination/index';
 import { MagicTableOptions, MagicTableColumns, MagicTableColumn } from '../../model/table.model';
 import { ObjectUtilsService } from '../../../shared/index';
 
@@ -43,6 +43,8 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
   public set tableOptions(tableOptions: any) {
     if (tableOptions) {
       this._tableOptions = tableOptions;
+      this.pagination.assign(this._tableOptions.pagination);
+      this._tableOptions.pagination = this.pagination;
     }
   }
 
@@ -57,8 +59,13 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
   private _columns: MagicTableColumns;
   private sorting: any;
   private configTableChanged: any;
+  private pagination: MagicPaginationOptions;
 
-  constructor(private objectUtilsService: ObjectUtilsService) { }
+  constructor(
+    private objectUtilsService: ObjectUtilsService,
+    private paginationConfigService: PaginationConfigService) {
+      this.pagination = this.paginationConfigService.get();
+  }
 
   public get sortedColumns(): Array<any> {
     const sortColumns: Array<any> = [];
@@ -101,8 +108,8 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
     emitAction(data);
   }
 
-  public onChangeTable(page: any = { page: this.tableOptions.pagination.page,
-                                     itemsPerPage: this.tableOptions.pagination.itemsPerPage
+  public onChangeTable(page: any = { page: this.pagination.page,
+                                     itemsPerPage: this.pagination.itemsPerPage
                                    }): any {
     // if (config.filtering) {
     //   Object.assign(this.config.filtering, config.filtering);
@@ -135,7 +142,7 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
       return data;
     }
 
-    this.pagination.length = data.length;
+    this.pagination.totalItems = data.length;
 
     const start = (page.page - 1) * page.itemsPerPage;
     const end = page.itemsPerPage > -1 ? (start + page.itemsPerPage) : data.length;
