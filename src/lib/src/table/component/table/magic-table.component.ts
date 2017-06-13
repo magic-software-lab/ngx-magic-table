@@ -1,7 +1,8 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter, SimpleChange } from '@angular/core';
 
-import { MagicTableOptions, MagicTableColumns, MagicTableColumn, MagicPaginationOptions } from '../../model/table.model';
-import { NgxMagicTableObjectUtilsService } from '../../service/object-utils';
+import { MagicPaginationOptions } from '../../../pagination/index';
+import { MagicTableOptions, MagicTableColumns, MagicTableColumn } from '../../model/table.model';
+import { ObjectUtilsService } from '../../../shared/index';
 
 @Component({
   moduleId: module.id,
@@ -39,19 +40,9 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
   }
 
   @Input()
-  public set tableOptions(tableOptions: MagicTableOptions) {
+  public set tableOptions(tableOptions: any) {
     if (tableOptions) {
       this._tableOptions = tableOptions;
-
-      if (this._tableOptions.pagination) {
-        this.pagination = {
-          page: this._tableOptions.pagination.page,
-          numPages: this._tableOptions.pagination.numPages,
-          itemsPerPage: this._tableOptions.pagination.itemsPerPage,
-          maxSize: this._tableOptions.pagination.maxSize,
-          length: this._tableOptions.pagination.length
-        };
-      }
     }
   }
 
@@ -67,15 +58,7 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
   private sorting: any;
   private configTableChanged: any;
 
-  private pagination: MagicPaginationOptions = {
-    page: 1,
-    numPages: 1,
-    itemsPerPage: 5,
-    maxSize: 5,
-    length: 1
-  };
-
-  constructor(private objectUtilsService: NgxMagicTableObjectUtilsService) { }
+  constructor(private objectUtilsService: ObjectUtilsService) { }
 
   public get sortedColumns(): Array<any> {
     const sortColumns: Array<any> = [];
@@ -118,7 +101,9 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
     emitAction(data);
   }
 
-  public onChangeTable(page: any = { page: this.pagination.page, itemsPerPage: this.pagination.itemsPerPage }): any {
+  public onChangeTable(page: any = { page: this.tableOptions.pagination.page,
+                                     itemsPerPage: this.tableOptions.pagination.itemsPerPage
+                                   }): any {
     // if (config.filtering) {
     //   Object.assign(this.config.filtering, config.filtering);
     // }

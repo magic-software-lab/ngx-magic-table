@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule, DatePipe, CurrencyPipe, DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import { SharedModule } from '../shared/index';
 import { NgxMagicPaginationModule } from '../pagination/index';
 import { BsDropdownModule, PaginationModule } from 'ngx-bootstrap';
 
@@ -10,12 +11,11 @@ import { NgxMagicTableContentPlaceholderComponent } from './component/content-pl
 import { NgxMagicTableBindDataDirective } from './directive/bind-data/bind-data.directive';
 import { NgxMagicTableSortedColumnDirective } from './directive/column/sorted-column.directive';
 
-import { NgxMagicTableObjectUtilsService } from './service/object-utils';
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     NgxMagicPaginationModule,
     BsDropdownModule.forRoot(),
     PaginationModule.forRoot()
@@ -35,8 +35,7 @@ import { NgxMagicTableObjectUtilsService } from './service/object-utils';
   providers: [
     DatePipe,
     CurrencyPipe,
-    DecimalPipe,
-    NgxMagicTableObjectUtilsService
+    DecimalPipe
   ]
 })
 export class NgxMagicTableModule {

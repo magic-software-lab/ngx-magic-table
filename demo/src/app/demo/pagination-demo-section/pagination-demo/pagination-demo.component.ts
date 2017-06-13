@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 
+import { MagicPaginationOptions } from '@magic-software/ngx-magic-table';
+
 @Component({
   selector: 'app-pagination-demo',
   templateUrl: './pagination-demo.component.html',
@@ -24,9 +26,10 @@ export class PaginationDemoComponent implements OnInit {
       }
   ];
 
-  public data;
+  public data: any[] = [];
 
   public tableOptions: any = {
+
   
   };
 

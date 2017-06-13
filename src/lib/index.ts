@@ -2,8 +2,9 @@ export { NgxMagicTableComponent,
          NgxMagicTableBindDataDirective,
          NgxMagicTableSortedColumnDirective,
          NgxMagicTableContentPlaceholderComponent,
-         NgxMagicTableObjectUtilsService,
          NgxMagicTableModule } from './src/table/index';
+
+export { ObjectUtilsService } from './src/shared/index';
 
 export {
          MagicPaginationOptions,
