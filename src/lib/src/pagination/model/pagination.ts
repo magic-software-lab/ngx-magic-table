@@ -5,7 +5,7 @@ export interface PageChangedEvent {
   page: number;
 }
 
-export interface IMagicPaginationOptions  {
+export interface PaginationOptions  {
   page: number;
 
   /** maximum number of items per page. If value less than 1 will display all items on one page */
@@ -47,7 +47,7 @@ export interface IMagicPaginationOptions  {
   disabled?: boolean;
 }
 
-export class MagicPaginationOptions implements IMagicPaginationOptions {
+export class MagicPaginationOptions {
 
     private _page: number;
     public get page() { return this._page; }
@@ -142,21 +142,15 @@ export class MagicPaginationOptions implements IMagicPaginationOptions {
 
     public onChange: EventEmitter<string> = new EventEmitter<string>();
 
-    constructor(options: IMagicPaginationOptions) {
-      this.doAssign(options);
-    }
-
-    public assign(options: IMagicPaginationOptions) {
-      this.doAssign(options);
-      this.changed();
-    }
-
-    private doAssign(options: IMagicPaginationOptions) {
-       for (const prop in options) {
-        if (options[prop]) {
-          this[prop] = options[prop];
-        }
+    constructor(options?: PaginationOptions) {
+      if (options) {
+        this.assign(options);
       }
+    }
+
+    public assign(options: PaginationOptions) {
+      Object.assign(this, options);
+      this.changed();
     }
 
     private changed(attributeName?: string) {

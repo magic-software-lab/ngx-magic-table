@@ -5,19 +5,25 @@ import { SharedModule } from '../shared/index';
 import { NgxMagicPaginationComponent } from './component/magic-pagination.component';
 import { PaginationConfigService } from './service/pagination-config.service';
 
+import { PaginationComponent } from './component-bootstrap/bootstrap-pagination.component';
+import { PaginationConfig } from './component-bootstrap/pagination.config';
+
 @NgModule({
   imports: [
     CommonModule,
     SharedModule
   ],
   declarations: [
-    NgxMagicPaginationComponent
+    NgxMagicPaginationComponent,
+    PaginationComponent
   ],
   exports: [
-    NgxMagicPaginationComponent
+    NgxMagicPaginationComponent,
+    PaginationComponent
   ],
   providers: [
-    PaginationConfigService
+    PaginationConfigService,
+    PaginationConfig
   ]
 })
 export class NgxMagicPaginationModule {

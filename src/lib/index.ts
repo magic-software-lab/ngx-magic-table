@@ -8,7 +8,7 @@ export { ObjectUtilsService } from './src/shared/index';
 
 export {
          MagicPaginationOptions,
-         IMagicPaginationOptions,
+         PaginationOptions,
          NgxMagicPaginationComponent,
          PaginationConfigService,
          NgxMagicPaginationModule } from './src/pagination/index';

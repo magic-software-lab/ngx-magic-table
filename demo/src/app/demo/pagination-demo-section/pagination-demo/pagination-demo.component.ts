@@ -28,16 +28,32 @@ export class PaginationDemoComponent implements OnInit {
 
   public data: any[] = [];
 
-  public tableOptions: any = {
-
-  
-  };
-
+  public tableOptions: any = {};
   constructor(private http:Http) { }
 
   ngOnInit() {
+
+    const a = new MagicPationation();
     this.http.get('assets/data/mock-large-data.json')
-                .subscribe(res => this.data = res.json());
+                .subscribe(res => {
+                  this.data = res.json();
+                  this.tableOptions = 
+                  {
+                  pagination: 
+                    {
+                      page: 1,
+                      itemsPerPage: 5,
+                      maxSize: 5,
+                      totalItems: this.data.length
+                  }
+                  }
+                  ;
+
+                });
   }
+
+}
+
+export class MagicPationation {
 
 }

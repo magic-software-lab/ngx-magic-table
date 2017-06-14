@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { MagicPaginationOptions, IMagicPaginationOptions } from '../model/pagination';
+import { MagicPaginationOptions, PaginationOptions } from '../model/pagination';
 
 @Injectable()
 export class PaginationConfigService {
