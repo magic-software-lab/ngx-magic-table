@@ -23,6 +23,8 @@ import { ButtonGroupDemoSectionComponent } from './button-group-demo-section/but
 import { ButtonGroupDemoComponent } from './button-group-demo-section/button-group-demo/button-group-demo.component';
 import { DropdownDemoSectionComponent } from './dropdown-demo-section/dropdown-demo-section.component';
 import { DropdownDemoComponent } from './dropdown-demo-section/dropdown-demo/dropdown-demo.component';
+import { PaginationDemoSectionComponent } from './pagination-demo-section/pagination-demo-section.component';
+import { PaginationDemoComponent } from './pagination-demo-section/pagination-demo/pagination-demo.component';
 
 @NgModule({
   imports: [
@@ -51,7 +53,9 @@ import { DropdownDemoComponent } from './dropdown-demo-section/dropdown-demo/dro
     ButtonGroupDemoSectionComponent,
     ButtonGroupDemoComponent,
     DropdownDemoSectionComponent,
-    DropdownDemoComponent
+    DropdownDemoComponent,
+    PaginationDemoSectionComponent,
+    PaginationDemoComponent
   ],
   exports: [
     MainDemoSectionComponent,
@@ -66,7 +70,8 @@ import { DropdownDemoComponent } from './dropdown-demo-section/dropdown-demo/dro
     FormattingDemoSectionComponent,
     SimpleButtonDemoSectionComponent,
     ButtonGroupDemoSectionComponent,
-    DropdownDemoSectionComponent
+    DropdownDemoSectionComponent,
+    PaginationDemoSectionComponent
   ]
 })
 export class DemoModule { }
@@ -78,3 +83,4 @@ export * from './formatting-demo-section/formatting-demo-section.component';
 export * from './simple-button-demo-section/simple-button-demo-section.component';
 export * from './button-group-demo-section/button-group-demo-section.component';
 export * from './dropdown-demo-section/dropdown-demo-section.component';
+export * from './pagination-demo-section/pagination-demo-section.component';

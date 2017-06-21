@@ -9,7 +9,8 @@ import { SimpleDemoSectionComponent,
          FormattingDemoSectionComponent,
          SimpleButtonDemoSectionComponent,
          ButtonGroupDemoSectionComponent,
-         DropdownDemoSectionComponent } from '../demo/demo.module';
+         DropdownDemoSectionComponent,
+         PaginationDemoSectionComponent } from '../demo/demo.module';
 
 @Component({
   selector: 'app-demos-page',
@@ -57,6 +58,11 @@ export class DemosPageComponent implements OnInit {
       id: 'dropdown',
       title: 'Dropdown',
       component: DropdownDemoSectionComponent
+    },
+    {
+      id: 'pagination',
+      title: 'Pagination',
+      component: PaginationDemoSectionComponent
     }
   ];
 

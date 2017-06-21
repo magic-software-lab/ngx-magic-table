@@ -1,7 +1,16 @@
-export { NgxMagicTableComponent } from './src/component/table/magic-table.component';
-export { NgxMagicTableBindDataDirective } from './src/directive/bind-data/bind-data.directive';
-export { NgxMagicTableSortedColumnDirective } from './src/directive/column/sorted-column.directive';
-export { NgxMagicTableContentPlaceholderComponent } from './src/component/content-placeholder/content-placeholder.component';
-export { NgxMagicTableObjectUtilsService } from './src/service/object-utils';
-export { NgxMagicTableModule } from './src/ngx-magic-table.module';
+export {
+    MagicTableComponent,
+    MagicTableBindDataDirective,
+    MagicTableSortedColumnDirective,
+    MagicTableContentPlaceholderComponent,
+    MagicTableModule } from './src/table/index';
+
+export {
+    MagicTableObjectUtilsService } from './src/shared/index';
+
+export {
+    MagicPaginationConfig,
+    MagicPaginationComponent,
+    MagicPaginationModule
+    } from './src/pagination/index';
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class NgxMagicTableObjectUtilsService {
+export class MagicTableObjectUtilsService {
 
     public isEquals(obj1: any, obj2: any): Boolean {
         for (const p in obj1) {

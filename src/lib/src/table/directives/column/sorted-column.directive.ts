@@ -1,12 +1,12 @@
 import { Directive, OnChanges, Input, Output, EventEmitter,
          HostListener, ElementRef, Renderer, SimpleChange } from '@angular/core';
 
-import { MagicTableColumn } from '../../model/magic-table-options';
+import { MagicTableColumn } from '../../models/magic-table-options';
 
 @Directive({
   selector: '[sortedColumn]'
 })
-export class NgxMagicTableSortedColumnDirective implements OnChanges {
+export class MagicTableSortedColumnDirective implements OnChanges {
   @Input()
   public sortedColumn: MagicTableColumn;
 

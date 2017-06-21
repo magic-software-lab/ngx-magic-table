@@ -60,9 +60,11 @@
     </div>
 
     <div *ngIf="pagination" class="text-center">
-        <pagination class="pagination-sm" [(ngModel)]="pagination.page" [totalItems]="pagination.length" [itemsPerPage]="pagination.itemsPerPage"
+
+        <magic-pagination class="pagination-sm" [(ngModel)]="pagination.page" [totalItems]="pagination.length" [itemsPerPage]="pagination.itemsPerPage"
             [maxSize]="pagination.maxSize" [boundaryLinks]="true" [rotate]="false" (pageChanged)="onChangeTable($event)" (numPages)="pagination.numPages = $event">
-        </pagination>
+        </magic-pagination>
+        
     </div>
 </div>
 

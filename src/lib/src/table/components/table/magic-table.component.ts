@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter, SimpleChange } from '@angular/core';
 
-import { MagicTableOptions, MagicTableColumns, MagicTableColumn, MagicTableOptionsPagination } from '../../model/magic-table-options';
-import { NgxMagicTableObjectUtilsService } from '../../service/object-utils';
+import { MagicTableOptions, MagicTableColumns, MagicTableColumn, MagicTableOptionsPagination } from '../../models/magic-table-options';
+import { MagicTableObjectUtilsService } from '../../../shared/services/object-utils';
 
 @Component({
   moduleId: module.id,
@@ -9,7 +9,7 @@ import { NgxMagicTableObjectUtilsService } from '../../service/object-utils';
   templateUrl: './magic-table.component.html',
   styleUrls: []
 })
-export class NgxMagicTableComponent implements OnInit, OnChanges {
+export class MagicTableComponent implements OnInit, OnChanges {
 
   @Output() public tableChanged: EventEmitter<any> = new EventEmitter();
 
@@ -75,7 +75,7 @@ export class NgxMagicTableComponent implements OnInit, OnChanges {
     length: 1
   };
 
-  constructor(private objectUtilsService: NgxMagicTableObjectUtilsService) { }
+  constructor(private objectUtilsService: MagicTableObjectUtilsService) { }
 
   public get sortedColumns(): Array<any> {
     const sortColumns: Array<any> = [];

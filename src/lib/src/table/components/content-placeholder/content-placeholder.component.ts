@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './content-placeholder.component.html',
   styleUrls: ['./content-placeholder.component.scss']
 })
-export class NgxMagicTableContentPlaceholderComponent implements OnInit {
+export class MagicTableContentPlaceholderComponent implements OnInit {
 
   constructor() { }
 

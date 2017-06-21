@@ -2,12 +2,12 @@ import { Directive, ElementRef, OnChanges, Input, SimpleChange, Renderer } from 
 import { DatePipe, CurrencyPipe, DecimalPipe } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import { MagicTableColumn } from '../../model/magic-table-options';
+import { MagicTableColumn } from '../../models/magic-table-options';
 
 @Directive({
   selector: '[bindData]'
 })
-export class NgxMagicTableBindDataDirective implements OnChanges {
+export class MagicTableBindDataDirective implements OnChanges {
 
   @Input() bindData: any;
 
